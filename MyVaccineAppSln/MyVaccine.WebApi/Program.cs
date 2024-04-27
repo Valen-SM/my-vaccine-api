@@ -20,12 +20,14 @@ builder.Services.SetMyVaccineAuthConfiguration();
 builder.Services.SetDependencyInjection();
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
+//ESTE CODIGO ES  UTILIZADO PARA OBLIGAR AL SERVICIO A FUNCIONAR LOCALMENTE EN EL PUERTO 38791 PERO SI TIENES EL CONTENEDOR
+// Y EL SERVICIO VA A HABER CONFLICTO  POR QUE USAN EL MISMO PUERTO ENTONCES EN ESE CASO NO ES NECESARIO 
 //builder.Services.AddDbContext<MyVaccineAppDbContext>(options =>
 //            options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
-builder.WebHost.ConfigureKestrel(serverOptions =>
-{
-    serverOptions.ListenAnyIP(38791); // Cambia a ListenAnyIP para asegurarte de que pueda aceptar peticiones externas
-});
+//builder.WebHost.ConfigureKestrel(serverOptions =>
+//{
+//    serverOptions.ListenAnyIP(38791); // Cambia a ListenAnyIP para asegurarte de que pueda aceptar peticiones externas
+//});
 
 
 

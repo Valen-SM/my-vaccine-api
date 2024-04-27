@@ -5,7 +5,7 @@ services:
       context: .
       dockerfile: MyVaccine.WebApi/DockerFile
     ports:
-      - "38791:38791"
+      - "38791:80"
     depends_on:
       - db
     environment:
